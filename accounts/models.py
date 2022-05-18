@@ -16,4 +16,4 @@ class Transaction(models.Model):
     debit_account = models.ForeignKey(Account, on_delete=models.CASCADE, related_name='debit_account')
     credit_account = models.ForeignKey(Account, on_delete=models.CASCADE, related_name='credit_account')
     value = models.FloatField(default=0)
-    timestamp = models.DateTimeField()
+    timestamp = models.DateField(auto_now_add=True)
