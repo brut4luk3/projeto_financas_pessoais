@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User
 
-def index(request):
+def new(request):
     if request.method == 'GET':
         return render(request, 'register/new.html')
     elif request.method == 'POST':

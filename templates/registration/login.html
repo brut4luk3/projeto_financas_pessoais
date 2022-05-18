@@ -12,7 +12,7 @@
                     FAÇA SEU LOGIN
                 </div>
             </div>
-            <form action="" method="POST">
+            <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
                 <div class="row my-2">
                     <div class="col">
