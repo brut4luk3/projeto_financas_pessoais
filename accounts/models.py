@@ -1,6 +1,5 @@
+from django.contrib.auth.models import User
 from django.db import models
-
-from users.models import User
 
 class Account(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -9,6 +8,9 @@ class Account(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        db_table = 'tb_accounts'
 
 class Transaction(models.Model):
     debit_account = models.ForeignKey(Account, on_delete=models.CASCADE, related_name='debit_account')
