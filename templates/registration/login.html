@@ -7,6 +7,12 @@
                 VOCÊ JÁ ESTÁ LOGADO!
             </div>
         {% else %}
+
+        {% if form.errors %}
+            <div>
+                {{ form.errors }}
+            </div>
+        {% endif %}
             <div class="row mt-4">
                 <div class="col align-self-center text-center">
                     FAÇA SEU LOGIN
@@ -18,7 +24,7 @@
                     <div class="col">
                         <input
                                 type="text"
-                                name="txtUsername"
+                                name="username"
                                 class="form-control"
                                 placeholder="Informe o seu nome de usuário"
                         >
@@ -28,7 +34,7 @@
                     <div class="col">
                         <input
                                 type="password"
-                                name="txtPassword"
+                                name="password"
                                 class="form-control"
                                 placeholder="Informe a sua senha"
                         >
