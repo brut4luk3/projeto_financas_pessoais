@@ -7,15 +7,15 @@
     {% else %}
         <h2 class="text-dark text-center">Você está logado como {{ user.username }}.</h2>
         <hr>
-    {% endif %}
-
-    {% if total_num_accounts %}
         <div class="col d-flex justify-content-center">
-            <p>Você tem atualmente <strong>{{ total_num_accounts }}</strong> contas cadastradas.</p>
-        </div>
-    {% else %}
-        <div class="col d-flex justify-content-center">
-            <p>Você tem atualmente <strong>0</strong> contas cadastradas.</p>
+            <p>
+                Você tem atualmente <strong>{{ total_num_accounts }}</strong> contas cadastradas.
+                {% if total_num_accounts == 0 %}
+                    <a href="{% url 'users:create_account' %}"> Cadastre a primeira!</a>
+                {% else %}
+                    <a href="{% users:list_accounts %}"> Acesse a página de contas!</a>
+                {% endif %}
+            </p>
         </div>
     {% endif %}
 
