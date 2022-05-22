@@ -10,5 +10,8 @@ urlpatterns = [
     path('<int:user_id>/', views.detail, name='detail'),
 
     path('me/accounts/create', views.create_account, name='create_account'),
-    path('me/accounts', views.list_accounts, name='list_accounts')
+    path('me/accounts', views.list_accounts, name='list_accounts'),
+
+    path('me/transactions/create', views.create_transaction, name='create_transaction'),
+    path('me/transactions', views.list_transactions, name='list_transactions')
 ]
