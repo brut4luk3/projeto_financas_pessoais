@@ -8,4 +8,4 @@ from register import views
 
 def show_profile(request):
 
-    return render(request, 'profiles/index.html', context=context)
+    return render(request, 'profiles/index.html')
