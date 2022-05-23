@@ -1,6 +1,7 @@
 from django.urls import path
 
 from . import views
+from .profiles import profile_views
 
 
 app_name = 'users'
@@ -13,5 +14,7 @@ urlpatterns = [
     path('me/accounts', views.list_accounts, name='list_accounts'),
 
     path('me/transactions/create', views.create_transaction, name='create_transaction'),
-    path('me/transactions', views.list_transactions, name='list_transactions')
+    path('me/transactions', views.list_transactions, name='list_transactions'),
+
+    path('users/profile', profile_views.show_profile, name='show_profile')
 ]

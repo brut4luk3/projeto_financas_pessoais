@@ -5,7 +5,7 @@
         <h2 class="text-warning text-center">Você não está logado!</h2>
         <a href="{% url 'login' %}">Faça seu login!</a>
     {% else %}
-        <h2 class="text-dark text-center">Você está logado como {{ user.username }}.</h2>
+        <h2 class="text-dark text-center">Olá, {{ user.username }}!</h2>
         <hr>
         <div class="row">
             <div class="col d-flex justify-content-center">
