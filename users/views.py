@@ -5,17 +5,24 @@ from django.urls import reverse
 
 from accounts.models import Account, Transaction
 
+
 def index(request):
 
-    total_num_accounts = request.user.account_set.all().count()
-    total_num_transactions = Transaction.objects.filter(debit_account__user_id=request.user).count()
+    if request.user.is_authenticated:
 
-    context = {
+        total_num_accounts = request.user.account_set.all().count()
+        total_num_transactions = Transaction.objects.filter(debit_account__user_id=request.user).count()
+
+        context = {
         'total_num_accounts': total_num_accounts,
         'total_num_transactions': total_num_transactions
-    }
+        }
 
-    return render(request, 'users/index.html', context=context)
+        return render(request, 'users/index.html', context=context)
+
+    else:
+
+        return render(request, 'users/index.html')
 
 
 def detail(request: HttpRequest, user_id: int):

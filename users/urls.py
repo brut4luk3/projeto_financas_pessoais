@@ -16,5 +16,5 @@ urlpatterns = [
     path('me/transactions/create', views.create_transaction, name='create_transaction'),
     path('me/transactions', views.list_transactions, name='list_transactions'),
 
-    path('users/profile', profile_views.show_profile, name='show_profile')
+    path('profile/', profile_views.show_profile, name='show_profile')
 ]
