@@ -41,11 +41,16 @@
                     </p>
                 </div>
             </div>
-            <div class="row mt-2 mb-2">
+            <div class="row mt-2">
                 <div class="col d-flex justify-content-left">
                     <p>
                         <strong>Último login: </strong> {{ user.last_login }}
                     </p>
+                </div>
+            </div>
+            <div class="row mt-2 mb-2">
+                <div class="col d-flex justify-content-left">
+                    <a href="{% url 'users:index' %}">Voltar</a>
                 </div>
             </div>
         {% endif %}

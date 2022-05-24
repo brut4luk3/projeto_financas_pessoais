@@ -1,13 +1,30 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container border border-dark mt-2" style="max-width: 800px">
+    <div class="container border border-dark mt-2" style="max-width: 700px">
         {% if not user.is_authenticated %}
-            <h2 class="text-warning text-center">Você não está logado!</h2>
-            <a href="{% url 'login' %}">Faça seu login!</a>
+        <div class="row">
+            <div class="col justify-content-center">
+                <h2 class="text-warning text-center">Você não está logado!</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <a href="{% url 'login' %}">Faça seu login!</a>
+            </div>
+        </div>
         {% else %}
-            <h2 class="text-dark text-center">Você está logado como {{ user.username }}.</h2>
-            <hr>
+        <div class="row">
+            <div class="col justify-content-center">
+                <h2 class="text-dark text-center">Você está logado como {{ user.username }}.</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <a href="{% url 'users:show_profile' %}">Acesse seu perfil!</a>
+            </div>
+        </div>
+        <hr>
             <div class="row">
                 <div class="col d-flex justify-content-center">
                     <p>
